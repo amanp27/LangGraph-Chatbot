@@ -1,6 +1,6 @@
 # LangGraph Chatbot
 
-A sophisticated chatbot application built using LangGraph, Streamlit, and the Groq LLM platform. The application demonstrates different implementations of chat functionality including basic chat, streaming responses, thread management, and database persistence.
+A sophisticated chatbot application built using LangGraph, Streamlit, and the Groq LLM platform. The application demonstrates different implementations of chat functionality including basic chat, streaming responses, thread management, and database persistence. It also integrates LangSmith for observability and tracing of the LLM interactions.
 
 ## Features
 
@@ -14,6 +14,9 @@ A sophisticated chatbot application built using LangGraph, Streamlit, and the Gr
 - 🔄 Conversation history management
 - 📝 Thread-based chat organization
 - 💾 SQLite database integration for persistent storage
+- 📊 LangSmith integration for observability and tracing
+- 🔍 Real-time monitoring of LLM interactions
+- 📈 Performance tracking and debugging capabilities
 
 ## Project Structure
 
@@ -49,9 +52,12 @@ pip install streamlit langgraph langchain-groq langchain-core python-dotenv
 ```
 
 4. Set up your environment variables:
-Create a `.env` file in the project root and add your Groq API key:
+Create a `.env` file in the project root and add your API keys:
 ```
 GROQ_API_KEY=your_api_key_here
+LANGCHAIN_API_KEY=your_langsmith_api_key_here
+LANGCHAIN_PROJECT=your_langsmith_project_name  # Optional: defaults to 'default'
+LANGCHAIN_ENDPOINT=https://api.smith.langchain.com  # Optional: default endpoint
 ```
 
 ## Usage
