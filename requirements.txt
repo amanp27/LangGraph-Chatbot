@@ -3,3 +3,4 @@ langchain[community]
 langchain-openai
 dotenv
 streamlit
+langgraph-checkpoint-sqlite
