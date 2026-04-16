@@ -26,9 +26,11 @@ parser = StrOutputParser()
 
 chain = prompt1 | llm1 | parser | prompt2 | llm2 | parser
 
-config = {'run_name': 'sequentail_chain'}
+config = {'run_name': 'sequentail_chain',
+          'tags': ['sequential_chain'],
+          'metadata': {'example': 'This is example of sequential chain'}}
 
 
-result = chain.invoke({'topic': "The impact of climate change on global agriculture"})
+result = chain.invoke({'topic': "Indian IT Industry"})
 
 print(result)
