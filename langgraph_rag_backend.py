@@ -66,7 +66,7 @@ def ingest_pdf(file_bytes: bytes, thread_id: str, filename: Optional[str] = None
         docs = loader.load()
 
         text_splitters = RecursiveCharacterTextSplitter(
-            chunk_size = 1000, chunk_overlap = 200, seperators = ["\n\n", "\n", " ", ""])
+            chunk_size = 1000, chunk_overlap = 200)
         chunks = text_splitters.split_documents(docs)
 
         # Build a FAISS retriever
@@ -80,6 +80,8 @@ def ingest_pdf(file_bytes: bytes, thread_id: str, filename: Optional[str] = None
             'documents': len(docs),
             'chunks': len(chunks)
         }
+
+        return _THREAD_METADATA[str(thread_id)]
 
     finally:
         try:
