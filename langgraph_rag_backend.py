@@ -43,7 +43,7 @@ def _get_retriever(thread_id: Optional[str]):
 
 def ingest_pdf(file_bytes: bytes, thread_id: str, filename: Optional[str] = None):
     """
-    Build a FAISS retriever for the uploaded pdf snd store it in the thread.
+    Build a FAISS retriever for the uploaded pdf and store it in the thread.
     Returns a summary of dict that can be surface in the UI.
     """
 
@@ -53,7 +53,7 @@ def ingest_pdf(file_bytes: bytes, thread_id: str, filename: Optional[str] = None
     if not file_bytes:
         raise ValueError("No file bytes provided")
     
-    # Save the uploaded file to a teperory location and can not be deleted automatically after closed
+    # Save the uploaded file to a temporary location and can not be deleted automatically after closed
     with tempfile.NamedTemporaryFile(delete=False, suffix=".pdf") as temp_file:
         temp_file.write(file_bytes)
         temp_path = temp_file.name
