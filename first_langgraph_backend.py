@@ -8,7 +8,7 @@ from typing import TypedDict, Annotated
 from dotenv import load_dotenv
 load_dotenv()
 
-llm = ChatOpenAI()
+llm = ChatOpenAI(model="gpt-4o-mini")
 
 class ChatState(TypedDict):
 
