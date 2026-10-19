@@ -14,7 +14,7 @@ from dotenv import load_dotenv
 
 load_dotenv()
 
-llm = ChatOpenAI()
+llm = ChatOpenAI(model="gpt-4o-mini")
 
 search_tool = DuckDuckGoSearchResults()
 
